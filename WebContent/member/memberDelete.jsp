@@ -18,7 +18,7 @@
 
 	<form method="post" action="<%=request.getContextPath()%>/Delete.mdo">
 		<input type="hidden" name="member_id" value="${sessionScope.member_id}">
-		<table border=1 width=300 align=center>
+		<table width=300 align=center class="tb">
 			<tr>
 				<th colspan=2>회원 탈퇴</th>
 			</tr>
@@ -28,8 +28,8 @@
 			</tr>
 			<tr>
 				<td colspan=2 align=center>
-				<input type=submit value="회원 탈퇴">
-				<input type="button" value="취소" onClick="history.go(-1)"></td>
+				<input type=submit value="회원 탈퇴" class="submit-btn">
+				<input type="button" value="취소" onClick="history.go(-1)" class="submit-btn"></td>
 			</tr>
 		</table>
 	</form>

@@ -18,18 +18,18 @@ th {
 </head>
 <body>
 
-	<form action="<%=request.getContextPath()%>/BoardUpdateAction.bdo"
-		method="post">
+	<form action="<%=request.getContextPath()%>/BoardUpdateAction.bdo" method="post">
 		<input type="hidden" name="board_num" value="${board.board_num }">
+		<input type="hidden" name="board_writer" value="${board.board_writer }">
 		<input type="hidden" name="page" value="${page }">
 		<table cellpadding="0" cellspacing="0" align=center border=1>
 			<tr align="center" valign="middle">
-				<th colspan="2">글 수정</th>
+				<th colspan="2">문의 수정</th>
 			</tr>
 			<tr>
 				<th>글쓴이</th>
 				<td>
-					<input name="board_writer" id="board_writer" type="text" maxlength="10" value="" />
+					${board.board_writer}
 				</td>
 			</tr>
 			<tr>
@@ -41,13 +41,13 @@ th {
 			<tr>
 				<th>제 목</th>
 				<td>
-					<input name="board_subject" id="board_subject" type="text" size="50" maxlength="100" value="" />
+					<input name="board_subject" id="board_subject" type="text" size="50" maxlength="100" value="${board.board_subject}" autofocus/>
 				</td>
 			</tr>
 			<tr>
 				<th>내 용</th>
 				<td>
-					<textarea name="board_content" id="board_content" cols="80" rows="15"></textarea>
+					<textarea name="board_content" id="board_content" cols="80" rows="15">${board.board_content}</textarea>
 				</td>
 			</tr>
 			<tr align="center" valign="middle">

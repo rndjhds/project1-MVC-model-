@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="share/header.jsp" %>    
+<%@ include file="../share/header.jsp" %>    
  
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 	<div class=products>
  	<c:forEach var="book" items="${booklist}">
       <a href="./BookDetail.pdo?book_num=${book.book_num}&page=${page}"><img src="<%=request.getContextPath()%>/bookupload/${book.book_img}"><span>${book.book_name}</span>${book.book_price}</a> 
@@ -29,11 +29,11 @@
 <c:if test="${bookcount > 0}">
 
 <!-- 1페이지로 이동 -->
-<a href="./BookMain.pdo?page=1" style="text-decoration: none"> << </a>
+<a href="./BookDomestic.pdo?book_category=${book_category}&page=1" style="text-decoration: none"> << </a>
 
 <!-- 이전 블록으로 이동 -->
 <c:if test="${startPage > 5}">
-<a href="./BookMain.pdo?page=${startPage-5}" style="text-decoration: none"> [이전] </a>
+<a href="./BookDomestic.pdo?book_category=${book_category}&page=${startPage-5}" style="text-decoration: none"> [이전] </a>
 </c:if>
 
 <!-- 각 블럭에 5개의 페이지 출력 -->
@@ -42,17 +42,17 @@
 		[${i}]
 	</c:if>
 	<c:if test="${i != page}">	<!-- 현재 페이지가 아닌 경우 -->
-		<a href="./BookMain.pdo?page=${i}">[${i}]</a>
+		<a href="./BookDomestic.pdo?book_category=${book_category}&page=${i}">[${i}]</a>
 	</c:if>
 </c:forEach>	
 	
 <!-- 다음 블럭으로 이동 -->
 <c:if test="${endPage < pageCount }">
-	<a href="./BookMain.pdo?page=${startPage+5}" style="text-decoration: none">[다음]</a>
+	<a href="./BookDomestic.pdo?book_category=${book_category}&page=${startPage+5}" style="text-decoration: none">[다음]</a>
 </c:if>
 	
 <!-- 마지막 페이지로 이동 -->
-	<a href="./BookMain.pdo?page=${pageCount}" style="text-decoration: none"> >> </a>
+	<a href="./BookDomestic.pdo?book_category=${book_category}&page=${pageCount}" style="text-decoration: none"> >> </a>
 
 
 </c:if>

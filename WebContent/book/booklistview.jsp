@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<table border=1 width=900 align="center">
+<table align="center" class="tb">
 	<caption>도서 목록</caption>
 	<tr>
 		<th>출력번호</th>
@@ -28,24 +28,43 @@
 		<th>출판사</th>
 		<th>카테고리</th>
 		<th>등록일</th>
+		<c:if test="${sessionScope.id=='admin'}">
+		<th>상품삭제</th>
+		</c:if>
+		<c:if test="${sessionScope.id != 'admin' && sessionScope.id != null}">
+		<th>상품담기</th></c:if>
 	</tr>
 	 <c:set var="num" value="${bookcount - (page-1) * 10 }" />
      <c:forEach var="b" items="${booklist}">
          <!--request객체로 공유해야 items에 공유 값을 입력하여 사용 할 수 있다.  -->
           <tr>
-            <th>${num}
+            <td class="tb1">${num}
                <c:set var="num" value="${num-1}" />
-            </th>
-            <th>${b.book_num}</th>
-            <th>${b.book_author}</th>
-            <th>${b.book_name}</th>
-            <th>${b.book_stock}</th> 
-            <th>${b.book_count}</th> 
-            <th>${b.book_price}</th>            
-            <th>${b.book_pb}</th>
-            <th>${b.book_category}</th>
-            <th><fmt:formatDate value="${b.book_reg}"
-                  pattern="yyyy-MM-dd HH:mm:ss EEE요일" /></th>
+            </td>
+            <c:if test="${sessionScope.id == 'admin'}">
+            <td class="tb1"><a href="<%=request.getContextPath() %>/BookModify.pdo?book_num=${b.book_num}&page=${page}">${b.book_num}</a></td>
+            </c:if>
+            <c:if test="${sessionScope.id != 'admin' }">
+            <td class="tb1">${b.book_num}</td>
+            </c:if>
+            <td class="tb1">${b.book_author}</td>
+            <td class="tb1">${b.book_name}</td>
+            <td class="tb1">${b.book_stock}</td> 
+            <td class="tb1">${b.book_count}</td> 
+            <td class="tb1">${b.book_price}</td>            
+            <td class="tb1">${b.book_pb}</td>
+            <td class="tb1">${b.book_category}</td>
+            <td class="tb1"><fmt:formatDate value="${b.book_reg}"
+                  pattern="yyyy-MM-dd HH:mm:ss EEE요일" /></td>
+            <c:if test="${sessionScope.id=='admin'}">
+            <td class="tb1"><input type="button" value="상품삭제" class="submit-btn" 
+            	onClick="location.href='<%=request.getContextPath()%>/BookDelete.pdo?book_num=${b.book_num}&page=${page}'">
+            </td></c:if>
+            <c:if test="${sessionScope.id != 'admin' && sessionScope.id != null}">
+            <td class="tb1">
+            	<input type=button value="담기" class="submit-btn" 
+            	onclick="location.href='./CartAdd.cdo?book_name=${b.book_name}&book_num=${b.book_num}&book_price=${b.book_price}'">
+            </td></c:if>
          </tr>
          
      </c:forEach>

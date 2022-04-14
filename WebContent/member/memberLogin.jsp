@@ -20,28 +20,28 @@
 <body>
 
 <form method="post" action="<%=request.getContextPath()%>/Login.mdo">
-<table border=1 width=400 align=center>
+<table width=400 align=center class="tb">
 	<tr>
 		<th colspan=2>회원 로그인</th>
 	</tr>
 	<tr>
-		<td>회원 아이디</td>
-		<td><input type=text name="member_id" id="member_id" width=100% autofocus="autofocus">
+		<td class="tb1">회원 아이디</td>
+		<td><input type=text name="member_id" id="member_id" width=100% autofocus="autofocus" size=30>
 		<div id="idCheck"></div>
 		</td>
 		
 	</tr>
 	<tr>
-		<td>회원 비밀번호</td>
-		<td><input type=password name="member_pw" id="member_pw">
+		<td class="tb1">회원 비밀번호</td>
+		<td><input type=password name="member_pw" id="member_pw" size=30>
 		<div id="pwCheck"></div>
 		</td>
 		
 	</tr>
 	<tr align="center">
 		<td colspan=2>
-		<input type="submit" value="로그인">
-		<input type="reset" value="취소"></td>
+		<input type="submit" value="로그인" class="submit-btn">
+		<input type="reset" value="취소" class="submit-btn"></td>
 	</tr>
 </table>
 </form>

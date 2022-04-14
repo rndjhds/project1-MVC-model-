@@ -30,7 +30,7 @@ th {
 	background-color: #EEE
 }
 </style>
-
+<c:if test="${sessionScope.id == 'admin'}">
 <table width=900 align=center>
 	<caption>상세 페이지</caption>
 	<tr>
@@ -56,6 +56,33 @@ th {
 		</td>
 	</tr>
 </table>
-</body>
 <%@ include file="/share/footer.jsp" %>
+</c:if>
+<c:if test="${sessionScope.id != 'admin' && sessionScope.id != null}">
+<table width=900 align=center>
+	<caption>상세 페이지</caption>
+	<tr>
+		<th>제목</th>
+		<td>${board.board_subject}</td>
+		<th>글쓴이</th>
+		<td>${board.board_writer}</td>
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td colspan=3>${content}</td>
+	</tr>
+	<tr>
+		<td colspan=4 align=center>
+			<input type="button" value=" 수정 "
+			onClick="location.href='./BoardUpdateForm.bdo?board_num=${board.board_num}&page=${page}'">&nbsp;
+			<input type="button" value=" 삭제 "
+			onClick="location.href='./BoardDeleteForm.bdo?board_num=${board.board_num}&page=${page}'">&nbsp;
+			<input type="button" value=" 목록 "
+			onClick="location.href='./BoardListAction.bdo?page=${page}'">
+		</td>
+	</tr>
+</table>
+<%@ include file="/share/footer.jsp" %>
+</c:if>
+</body>
 </html>

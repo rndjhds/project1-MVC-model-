@@ -12,7 +12,7 @@ $(document).ready(function(){
 			
 			$.ajax({
 				type:"post",
-				url:"/bookpro2/Idcheck.mdo",
+				url:"/bookpro/Idcheck.mdo",
 				data:{"member_id":id},
 				datatype:"text",
 				success:function(data){

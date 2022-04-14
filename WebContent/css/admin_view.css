@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   min-width: 992px;
@@ -14,6 +15,11 @@ body {
   padding-left: 30px;
   padding-right: 30px;
   background-color: white;
+}
+
+.text a {
+	text-decoration: none;
+	color: black;
 }
 
 .info {
@@ -38,9 +44,11 @@ li a {
   text-decoration: none;
   color: black;
   font-size: 13px;
-  font-weight: bold;
 }
 
+li a:hover {
+	font-weight: bold;
+}
 
 /* header end */
 
@@ -59,5 +67,12 @@ li a {
 	font-size: 20px;
 }
 
+.navbar a:hover {
+	font-weight: bold;
+	color:blue;
+}
+
+
 
 /* navbar end */
+

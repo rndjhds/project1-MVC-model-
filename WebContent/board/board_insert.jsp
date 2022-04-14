@@ -19,6 +19,7 @@ th {
 <body>
 
 	<form action="<%=request.getContextPath()%>/BoardInsertAction.bdo" method="post">
+		<input type="hidden" name="board_writer" value="${member_name}">
 		<table cellpadding="0" cellspacing="0" align=center border=1>
 			<tr align="center" valign="middle">
 				<th colspan="2">문의 하기</th>
@@ -26,13 +27,13 @@ th {
 			<tr>
 				<th>글쓴이</th>
 				<td>
-					<input name="board_writer" id="board_writer" type="text" maxlength="10" value="" />
+					${member_name}
 				</td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
 				<td>
-					<input name="board_pw" id="board_pw" type="password" maxlength="10" value="" />
+					<input name="board_pw" id="board_pw" type="password" maxlength="10"  value="" />
 				</td>
 			</tr>
 			<tr>

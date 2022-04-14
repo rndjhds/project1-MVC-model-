@@ -14,32 +14,27 @@
 </head>
 <body>
 
-<%-- <%
-session.setAttribute("id", "admin");
-%> --%>
-
-
 <form method="post" action="<%=request.getContextPath()%>/AdminLogin.ado">
-<table border=1 width=400 align=center>
+<table width=400 align=center class="tb">
 	<tr>
 		<th colspan=2>관리자 로그인</th>
 	</tr>
 	<tr>
-		<td>관리자 아이디</td>
-		<td><input type=text name="admin_id" id="admin_id" width=100%>
+		<td class="tb1">관리자 아이디</td>
+		<td><input type=text name="admin_id" id="admin_id" size=30>
 		<div id="idCheck"></div>	<!-- 관리자 로그인을 할수있는 아이디 여부 판단 -->
 		</td>
 	</tr>
 	<tr>
-		<td>관리자 비밀번호</td>
-		<td colspan=2><input type=text name="admin_pw" id="admin_pw">
+		<td class="tb1">관리자 비밀번호</td>
+		<td colspan=2><input type=password name="admin_pw" id="admin_pw" size=30>
 		
 		</td>
 		
 	</tr>
 	<tr align="center">
-		<td colspan=2><input type=submit name="login_admin" id="login_admin" value="관리자로그인">
-					  <input type="reset" name="login_admin" id="login_admin" value="취소"></td>
+		<td colspan=2><input type=submit name="login_admin" id="login_admin" value="관리자로그인" class="submit-btn">
+					  <input type="reset" name="login_admin" id="login_admin" value="취소" class="submit-btn"></td>
 	</tr>
 </table>
 </form>

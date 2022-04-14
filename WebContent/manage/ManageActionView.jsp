@@ -15,17 +15,16 @@
 </head>
 <body>
 
-<table border=1 width=800 align=center>
-		<caption>회원 관리</caption>
+<table width=800 align=center class="tb">
+		<caption>회원 관리<br><br></caption>
 		<tr>
 			<th>회원관리 번호</th>
 			<th>회원아이디</th>
 			<th>회원등급</th>
 			<th>마일리지</th>			
-			
+			<th>기타</th>			
 		</tr>
 
-		
 		<c:set var="num" value="${listcount - (page-1) * 10 }" />
 		<c:forEach var="b" items="${managelist}">
 			<!--request객체로 공유해야 items에 공유 값을 입력하여 사용 할 수 있다.  -->
@@ -33,10 +32,14 @@
 				<%-- <th>${num}
 					<c:set var="num" value="${num-1}" />
 				</th> --%>
-				<th>${b.manage_num}</th>
-				<th>${b.member_id}</th>
-				<th>${b.member_grade}</th>
-				<th>${b.member_mile}</th> 				
+				<td class="tb1">${num}
+					<c:set var="num" value="${num-1}" />
+				</td>
+				<td class="tb1">${b.member_id}</td>
+				<td class="tb1">${b.member_grade}</td>
+				<td class="tb1">${b.member_mile}</td> 				
+				<td class="tb1"><a href="./manage/MileCharge.jsp?member_id=${b.member_id}&member_mile=${b.member_mile}&member_grade=${b.member_grade}">회원관리</a></td>
+				
 			</tr>
 					
 		</c:forEach>
@@ -45,8 +48,7 @@
 	</table>
 	<br><br><br>
 	
-	<input type="button" value="">
-	<input type="button" value="취소">
+	
 <form method="post" action="<%=request.getContextPath() %>/"> 
 
 </form>
@@ -88,7 +90,13 @@
 
 </c:if>
 </center>
-
+<br><br>
+<table width=100 align=center>
+	<tr align="center">
+	<td width=50><input type="button" value="확인"></td>
+	<td width=50><input type="button" value="취소"></td>
+	</tr>
+</table>	
 
 <br><br><br><br>
 

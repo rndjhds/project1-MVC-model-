@@ -31,7 +31,7 @@ th {
 			<tr>
 				<th>글쓴이</th>
 				<td>
-					<input name="board_writer" id="board_writer" type="text" maxlength="10" value="" />
+					<input name="board_writer" id="board_writer" type="text" maxlength="10" value="관리자"/>
 				</td>
 			</tr>
 			<tr>
@@ -43,7 +43,7 @@ th {
 			<tr>
 				<th>제 목</th>
 				<td>
-					<input name="board_subject" id="board_subject" type="text" size="50" maxlength="100" value="" />
+					<input name="board_subject" id="board_subject" type="text" size="50" maxlength="100" value="" autofocus/>
 				</td>
 			</tr>
 			<tr>

@@ -13,7 +13,7 @@
 <body>
 
 
-<form method="post" action="#">
+<form method="post" action="">
 	<table border=1 align="center">
 		<tr>
 			<th>회원아이디</th>

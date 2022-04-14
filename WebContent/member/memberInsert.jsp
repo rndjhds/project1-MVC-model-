@@ -29,58 +29,62 @@
 <body>
 
 <form method="post" action="<%=request.getContextPath()%>/MemberInsert.mdo">
-	<table border=1 width=500 height=300 align=center>
-		<tr>
-			<th colspan=2>회원 가입</th>
-		</tr>
-		<tr>
-			<td>아이디</td>
-			<td><input type=text autofocus="autofocus" id="member_id" name="member_id">
-				<input type=button value="중복 확인" id="idcheck">
+
+	<h4 id="title">회원 가입폼</h4>
+	<div class="mem">
+		<table align="center" class="tb">
+			<tr>
+				<th>아이디</th>
+				<td><input type=text autofocus="autofocus" id="member_id" name="member_id" size=30>
+				<input type=button value="중복 확인" id="idcheck" class="click">
 				<div id="myid"></div></td>
-		</tr>
-		<tr>
-			<td>비밀번호</td>
-			<td><input type=password id="member_pw" name="member_pw"></td>
-		</tr>
-		<tr>
-			<td>이름</td>
-			<td><input type=text id="member_name" name="member_name"></td>
-		</tr>
-		<tr>
-			<td>이메일</td>
-			<td><input type=text size=10 id="member_mailid" name="member_mailid"> @ 
-				<input type=text size=10 id="member_domain" name="member_domain">
-				<select id="email">
-					<option value="">직접입력</option>
-					<option value="naver.com">네이버</option>
-					<option value="daum.net">다음</option>
-					<option value="nate.com">네이트</option>
-					<option value="gmail.com">구글</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>연락처</td>
-			<td><input type=text size=4 id="member_phone1" name="member_phone1" maxlength=4> - 
-				<input type=text size=4 id="member_phone2" name="member_phone2" maxlength=4> - 
-				<input type=text size=4 id="member_phone3" name="member_phone3" maxlength=4></td>
 			</tr>
 			<tr>
-			<td>우편번호</td>
-			<td><input type=text size=5 id="member_post" name="member_post">
-				<input type=button value="우편번호 검색" onClick="openDaumPostcode()">
-			</td>
-		</tr>
-		<tr>
-			<td>주소</td>
-			<td><input type=text size=45 id="member_address" name="member_address"></td>
-		</tr>
-		<tr>
-			<td colspan=2 align=center><input type=submit value="회원 가입">
-				<input type=reset value="취소"></td>
-		</tr>
-	</table>
-</form>
+				<th>비밀번호</th>
+				<td><input type=password id="member_pw" name="member_pw" size=30></td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td><input type=text id="member_name" name="member_name" size=30></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><input type=text size=10 id="member_mailid" name="member_mailid"> @ 
+					<input type=text size=11 id="member_domain" name="member_domain">
+					<select id="email">
+						<option value="">직접입력</option>
+						<option value="naver.com">네이버</option>
+						<option value="daum.net">다음</option>
+						<option value="nate.com">네이트</option>
+						<option value="gmail.com">구글</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>연락처</th>
+				<td><input type=text size=5 id="member_phone1" name="member_phone1" maxlength=4> - 
+					<input type=text size=5 id="member_phone2" name="member_phone2" maxlength=4> - 
+					<input type=text size=5 id="member_phone3" name="member_phone3" maxlength=4>
+				</td>
+			</tr>
+			<tr>
+				<th>우편번호</th>
+				<td><input type=text size=30 id="member_post" name="member_post">
+					<input type=button value="우편번호 검색" onClick="openDaumPostcode()" class="click">
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><input type=text size=30 id="member_address" name="member_address"></td>
+			</tr>
+		</table>
+		
+		<div class="btn1">
+			<input type=submit value="회원 가입">
+			<input type=reset value="취소">
+		</div>
+	</div>
+
+ </form>
 
 <%@ include file="/share/footer.jsp" %>
 

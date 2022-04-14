@@ -33,7 +33,7 @@ th {
 </style>
 
 <table width=900 align=center>
-	<caption>문의 게시판</caption>
+	<caption><h2>문의 게시판</h2></caption>
 	<tr>
 		<th>번호</th>
 		<th>제목</th>
@@ -49,13 +49,18 @@ th {
 			${num}
 			<c:set var="num" value="${num - 1}" />
 		</td>
-		<td><!-- 댓글 여백 처리 -->
+		<td  class="tb1"><!-- 댓글 여백 처리 -->
 			<c:if test="${b.board_lev > 0}">
 				<c:forEach var="i" begin="0" end="${b.board_lev }">
-				&nbsp;
+				&nbsp;&nbsp;
 				</c:forEach>
 			</c:if>
+			<c:if test="${sessionScope.id != null}">
 			<a href="./BoardDetailAction.bdo?board_num=${b.board_num}&page=${page}">${b.board_subject}</a>
+			</c:if>
+			<c:if test="${sessionScope.id == null}">
+			<a href="./BoardAlert.bdo">${b.board_subject}</a>
+			</c:if>
 		</td>
 		<td>
 			${b.board_writer}
@@ -66,7 +71,8 @@ th {
 			${b.board_rc}
 		</td>
 		<td>
-			<c:if test="${b.board_lev > 0}">답변완료</c:if>
+			<c:if test="${b.board_check==0 && b.board_lev==0}">답변대기</c:if>
+			<c:if test="${b.board_check==1 && b.board_lev==0}">답변완료</c:if>
 		</td>
 	</tr>
 	</c:forEach>
@@ -100,7 +106,25 @@ th {
 		<a href="./BoardListAction.bdo?page=${pageCount}" style="text-decoration: none"> >> </a>
 		
 	</c:if>
-	<a href="./BoardForm.bdo"><input type="button" value="문의하기"></a>
+	<c:if test="${sessionScope.id != null}">
+	<a href="./BoardInsertForm.bdo"><input type="button" value="문의하기"></a>
+	</c:if>
+	<c:if test="${sessionScope.id == null}">
+	<input type="button" value="문의하기" onClick="location.href='./BoardAlert.bdo'">
+	</c:if>
+	
+<form method=post action="./BoardListAction.bdo" class="mar">
+	<div class="mar">
+	<select name="sel">
+		<option value="">검색</option>
+		<option value="board_writer">작성자</option>
+		<option value="board_subject">제목</option>
+		<option value="board_content">내용</option>
+	</select>
+	<input type=text name="find" id="find">
+	<input type=submit value="검색">
+	</div>
+</form>
 </center>
 <%@ include file="/share/footer.jsp" %>
 </body>

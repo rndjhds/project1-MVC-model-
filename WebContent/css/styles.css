@@ -1,78 +1,56 @@
-* {
-  box-sizing: border-box;
+/* 공용 table layout */
+.tb {
+	border-top: 1px solid;
+	border-collapse: collapse;
 }
 
-body {
-  margin: 0;
-  min-width: 992px;
-  font-family: "Helvetica";
+.tb th, td {
+	border-bottom: 1px solid;
+	padding: 10px;
 }
 
-.header {
-  width: 100%;
-  height: 60px;
-  padding-left: 30px;
-  padding-right: 30px;
-  background-color: white;
+.tb th {
+	background-color: #EEE
 }
 
-.info {
-  text-align: center;
-}
-
-
-#Login-status {
-  float: right;
-  padding: 0px;
-  margin: 0px;
-}
-
-#Login-status li {
-  float: right;
-  list-style: none;
-  margin-left: 30px;
-  line-height: 60px;
-}
-
-li a {
-  text-decoration: none;
-  color: black;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-/* header end */
-
-.navbar {
-	margin: 100px;
-	clear:both;
+.tb1 {
 	text-align: center;
 }
 
-.navbar a {
+
+.tb1 > a {
 	text-decoration: none;
-	color: black;
-	font-weight: bold;
-	margin-right: 20px;
-	padding: 20px;
-	font-size: 20px;
 }
 
-/* navbar end */
+.tb1 > a:hover {
+	font-weight: bold;
+}
+
+.mar {
+	margin-top: 15px;
+}
+
+.tb2 a {
+	color: black;
+	text-decoration: none;
+}
+
+.tb2 a:hover {
+	font-weight: bold;
+}
+
+/* products */
 
 .products {
   clear:both;
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
-.products p {
-  font-size: 24px;
-  color: #545454;
-  font-weight: bold;
-  margin: 60px auto;
-}
-
 .products a {
+  border: 1px solid black;
   display: inline-block;
   width: 225px;
   margin-left: 10px;
@@ -89,17 +67,129 @@ li a {
   margin-bottom: 20px;
 }
 
-.clearfix {
-  clear: both;
-}
 
+.clearfix {
+	clear: both;
+}
 
 span {
   display: block;
   margin-bottom: 4px;
 }
-/* products */
+/* products end */
 
+/* bookdetail */
+.bookdetail {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.bookdetail p {
+	text-align: center;
+}
+
+.bookdetail img {
+	display: inline-block;
+	width: 50%;
+	border: 1px solid black;
+}
+
+.bookdetail strong {
+	display: block;
+}
+
+.bookdetail table th{
+	border: 1px solid black;
+}
+
+.bookdetail table td{
+	border: 1px solid black;
+}
+
+.con {
+	border: 1px solid black;
+	height: 100px;
+	overflow: auto;
+}
+
+.btn {
+	margin-top: 30px;
+	text-align: center;
+}
+/* bookdetail end */
+
+
+.submit-btn:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+}
+
+
+/* login-form end */
+
+/* mem */
+
+#title {
+	text-align: center;
+}
+
+.mem {
+	width: 900px;
+	margin: 0px auto;
+	border-radius: 5px;
+}
+
+.mem input {
+	border-radius: 3px;
+}
+
+.click:hover{
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+}
+
+.click {
+	font-size: 14px;
+	padding:0px 5px;
+}
+
+
+.btn1 {
+	margin-top: 8px;
+	text-align: center;
+}
+
+
+.btn1 input:hover{
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+}
+
+
+/* mem-end */
+
+/* board */
+
+.board td a{
+	text-decoration: none;
+	color: black;
+}
+
+.board td a:hover{
+	font-weight: bold;	
+}
+
+.board td a:visited{
+	color:red;
+	font-weight: bold;	
+}
+
+.btn2{
+	text-align: center;
+}
+
+/* board end */
+
+/* footer */
 .footer {
   text-align: center;
   margin-bottom: 80px;
@@ -110,4 +200,4 @@ span {
   margin-left: 10px;
   margin-right: 10px;
 }
-/* footer */
+/* footer end */

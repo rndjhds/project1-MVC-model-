@@ -13,36 +13,36 @@
 <body>
 
 
-<form method="post" action="<%=request.getContextPath() %>/BookInsert.pdo">
-	<table align="center" border=1 width=500>
+<form method="post" action="<%=request.getContextPath() %>/BookInsert.pdo" enctype="multipart/form-data">
+	<table align="center" class="tb">
 		<caption>상품등록</caption>
 		<tr>
 			<th>도서제목</th>
-			<td><input type="text" name="book_name" id="book_name"></td>
+			<td><input type="text" name="book_name" id="book_name" size=40></td>
 		</tr>
 		<tr>
 			<th>도서저자</th>
-			<td><input type="text" name="book_author" id="book_author"></td>
+			<td><input type="text" name="book_author" id="book_author" size=40></td>
 		</tr>
 		<tr>
 			<th>도서가격</th>
-			<td><input type="text" name="book_price" id="book_price"></td>
+			<td><input type="text" name="book_price" id="book_price" size=40></td>
 		</tr>
 		<tr>
 			<th>도서재고량</th>
-			<td><input type="text" name="book_stock" id="book_stock"></td>
+			<td><input type="text" name="book_stock" id="book_stock" size=40></td>
 		</tr>
 		<tr>
 			<th>도서출판사</th>
-			<td><input type="text" name="book_pb" id="book_pb"></td>
+			<td><input type="text" name="book_pb" id="book_pb" size=40></td>
 		</tr>
 		<tr>
 			<th>도서카테고리</th>
-			<td><input type="text" name="book_category" id="book_category"></td>
+			<td><input type="text" name="book_category" id="book_category" size=40></td>
 		</tr>
 		<tr>
 			<th>도서파일</th>
-			<td><input type="file" name="book_img" id="book_img"></td>
+			<td><input type="file" name="book_img" id="book_img" size=40></td>
 		</tr>
 		<tr>
 			<th>도서내용</th>
@@ -52,8 +52,8 @@
 		</tr>
 		<tr align="center">
 			<td colspan=2>
-				<input type="submit" value="상품등록">
-				<input type="reset" value="취소">		
+				<input type="submit" value="상품등록" class="submit-btn">
+				<input type="reset" value="취소" class="submit-btn">		
 			</td>
 		</tr>
 	</table>

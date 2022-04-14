@@ -28,7 +28,7 @@ th {
 			<tr>
 				<th>비밀번호</th>
 				<td>
-					<input name="board_pw" id="board_pw" type="password" maxlength="10" value="" />
+					<input name="board_pw" id="board_pw" type="password" maxlength="10" value="" autofocus/>
 				</td>
 			</tr>
 			<tr align="center" valign="middle">

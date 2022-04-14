@@ -31,7 +31,7 @@
 
 <form method="post" action="<%=request.getContextPath() %>/Update.mdo"> 
 <input type="hidden" name="member_id" value="${member.member_id}">
-<table border=1 width=500  height=300 align=center>
+<table width=500  height=300 align=center class="tb">
 	<tr>
 		<th colspan=2>회원 정보 수정</th>
 	</tr>
@@ -93,8 +93,8 @@
 		</td>
 	</tr>
 	<tr><td colspan=2 align=center>
-		<input type=submit value="수정">
-		<input type="button" value="취소" onClick="history.go(-1)">
+		<input type=submit value="수정" class="submit-btn">
+		<input type="button" value="취소" onClick="history.go(-1)" class="submit-btn">
 		</td>
 	</tr>	
 </table>
