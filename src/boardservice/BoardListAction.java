@@ -17,9 +17,14 @@ public class BoardListAction implements Action{
 		// TODO Auto-generated method stub
 		System.out.println("BoardListAction");
 		
+		request.setCharacterEncoding("utf-8");
+		
 		int page = 1;		// 현재 페이지 번호
 		int limit = 10;		// 한 페이지에 출력할 데이터 갯수
 		int pageSize = 5;	// 한 페이지에 출력할 버튼 갯수
+		
+		String sel = request.getParameter("sel");
+		String find = request.getParameter("find");
 		
 		if(request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page"));
@@ -29,10 +34,10 @@ public class BoardListAction implements Action{
 		int endRow = page * limit;					// 끝 페이지
 		
 		BoardDAO dao = BoardDAO.getInstance();
-		int listcount = dao.getCount();				// 총 데이터 갯수
+		int listcount = dao.getCount(sel, find);			// 총 데이터 갯수
 		System.out.println("listcount:" + listcount);
 		
-		List<BoardDTO> boardlist = dao.getList(startRow, endRow);	// 글 목록
+		List<BoardDTO> boardlist = dao.getList(startRow, endRow, sel, find);	// 글 목록
 		System.out.println("boardlist:" + boardlist);
 		
 		// 총 페이지

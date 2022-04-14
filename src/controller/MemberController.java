@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import memberservice.BuyAction;
 import memberservice.Delete;
 import memberservice.Idcheck;
 import memberservice.Login;
@@ -129,6 +130,16 @@ public class MemberController extends HttpServlet {
 		}else if(command.equals("/MileAddAction.mdo")) {
 			try {
 				action = new MileAddAction();
+				forward = action.execute(request, response);
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		// 구매버튼 눌렀을때	
+		}else if(command.equals("/BuyAction.mdo")) {
+			try {
+				action = new BuyAction();
 				forward = action.execute(request, response);
 				
 			}catch(Exception e) {

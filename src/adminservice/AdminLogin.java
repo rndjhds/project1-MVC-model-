@@ -28,10 +28,12 @@ public class AdminLogin implements Action{
 		
 		BookDAO dao = BookDAO.getInstance();
 		BookAdminDTO admindto = dao.getDetailAdmin(admin_id);
+		int admin_mile = admindto.getAdmin_mile();
 		
 		if(admindto.getAdmin_id().equals(admin_id)) {
 			if(admindto.getAdmin_pw().equals(admin_pw)) {
 				session.setAttribute("id", admin_id);
+				session.setAttribute("admin_mile", admin_mile);
 			}else {
 				out.println("<script>");
 				out.println("alert('비밀번호가 틀렸습니다.');");
@@ -44,7 +46,7 @@ public class AdminLogin implements Action{
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("share/AdminView.jsp");
+		forward.setPath("/OrderListAction.odo");
 		
 		
 		return forward;

@@ -22,6 +22,10 @@ public class CartListAction implements Action{
 		System.out.println(sid);
 		
 		CartDAO dao = CartDAO.getInstance();
+	    int cartcount = dao.getCount(sid);
+	    System.out.println("cartcount : " + cartcount);
+	      
+	    session.setAttribute("cartcount", cartcount);
 		
 		List<CartDTO> cartlist = dao.cartGetList(sid);
 		System.out.println("cartlist : " + cartlist);

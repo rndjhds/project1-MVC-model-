@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import boardservice.BoardDetailAction;
+import boardservice.BoardAlert;
 import boardservice.BoardDeleteAction;
 import boardservice.BoardInsertAction;
 import boardservice.BoardListAction;
@@ -56,7 +57,7 @@ public class BoardController extends HttpServlet {
 			}
 		
 		// 글 작성 폼
-		} else if(command.equals("/BoardForm.bdo")) {
+		} else if(command.equals("/BoardInsertForm.bdo")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./board/board_insert.jsp");
@@ -113,9 +114,18 @@ public class BoardController extends HttpServlet {
 			forward.setPath("./board/board_delete.jsp");
 			
 		// 글 삭제
-		} else if(command.equals("BoardDeleteAction.bdo")) {
+		} else if(command.equals("/BoardDeleteAction.bdo")) {
 			try {
 				action = new BoardDeleteAction();
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+			e.printStackTrace();
+			}
+			
+		// 로그인 경고
+		} else if(command.equals("/BoardAlert.bdo")) {
+			try {
+				action = new BoardAlert();
 				forward = action.execute(request, response);
 			} catch(Exception e) {
 			e.printStackTrace();

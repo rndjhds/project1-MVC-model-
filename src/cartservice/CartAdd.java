@@ -38,11 +38,13 @@ public class CartAdd implements Action{
 		int result = dao.cartAdd(cart);
 		if(result == 1) {
 			System.out.println("장바구니 담기 성공");
+			int cartcount = dao.getCount(sid);
+	        session.setAttribute("cartcount", cartcount);
 		}
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/BookListAction.pdo");
+		forward.setPath("/CartListAction.cdo");
 		return forward;
 	
 	}

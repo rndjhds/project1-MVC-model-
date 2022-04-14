@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cartservice.CartAdd;
+import cartservice.CartBuy;
 import cartservice.CartDel;
 import cartservice.CartListAction;
 import service.Action;
@@ -48,20 +49,29 @@ public class CartController extends HttpServlet {
 		} else if (command.equals("/CartListAction.cdo")) {
 			try {
 				action = new CartListAction();
-				;
 				forward = action.execute(request, response);
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			// 장바구니 목록 1개 삭제
+		// 장바구니 목록 1개 삭제
 		} else if (command.equals("/CartDel.cdo")) {
 			try {
 				action = new CartDel();
 				forward = action.execute(request, response);
 				
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		// 장바구니 구매 버튼
+		}else if(command.equals("/CartBuy.cdo")) {
+			try {
+				action = new CartBuy();
+				forward = action.execute(request, response);
+				
+			}catch(Exception e) {
 				e.printStackTrace();
 			}
 			

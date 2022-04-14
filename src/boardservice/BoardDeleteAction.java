@@ -47,7 +47,7 @@ public class BoardDeleteAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/BoardListAction.do?page="+page);
+		forward.setPath("/BoardListAction.bdo?page="+page);
 		
 		return forward;
 	}

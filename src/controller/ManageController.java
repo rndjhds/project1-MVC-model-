@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import manageservice.ManageAction;
 import manageservice.ManageAddAction;
+import manageservice.MileChargeAction;
 import saleservice.SaleAddAction;
 import saleservice.SaleListAction;
 import service.Action;
@@ -47,9 +48,21 @@ public class ManageController extends HttpServlet {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
+			}		
+		}else if (command.equals("/MileCharge.managedo")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./manage/MileCharge.jsp");
 		
+		}else if (command.equals("/MileChargeAction.managedo")) {
+			try {
+				action = new MileChargeAction(); // sale 클래스import
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}	
 		}
+		
 		if (forward != null) {
 			if (forward.isRedirect()) { // redirect 방식으로 포워딩
 				response.sendRedirect(forward.getPath());

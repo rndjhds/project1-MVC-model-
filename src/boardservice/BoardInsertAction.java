@@ -1,5 +1,7 @@
 package boardservice;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +17,10 @@ public class BoardInsertAction implements Action {
 		// TODO Auto-generated method stub
 		System.out.println("BoardInsertAction");
 		
+		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("utf-8");
+		
+		PrintWriter out = response.getWriter();
 		
 		BoardDTO board = new BoardDTO();
 		board.setBoard_writer(request.getParameter("board_writer"));

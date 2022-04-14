@@ -52,7 +52,7 @@ public class BoardUpdateAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/BoardDetailAction.do?board_num="+board_num+"&page="+page);
+		forward.setPath("/BoardDetailAction.bdo?board_num="+board_num+"&page="+page);
 		
 		return forward;
 	}

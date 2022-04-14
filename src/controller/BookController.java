@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bookservice.BookDelete;
 import bookservice.BookDetail;
+import bookservice.BookDomestic;
 import bookservice.BookInsert;
 import bookservice.BookListAction;
 import bookservice.BookMain;
@@ -103,8 +104,18 @@ public class BookController extends HttpServlet {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+			
+		// 카테고리별 출력
+		}else if(command.equals("/BookDomestic.pdo")) {
+			try {
+				action = new BookDomestic();
+				forward = action.execute(request, response);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}
-
+	
 		
 		
 		
