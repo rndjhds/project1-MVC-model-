@@ -36,6 +36,8 @@ public class BoardDetailAction implements Action {
 		forward.setPath("./board/board_view.jsp");
 		
 		return forward;
+		
+		
 	}
 
 }

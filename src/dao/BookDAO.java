@@ -158,7 +158,7 @@ public class BookDAO {
 			return result;
 		}
 		
-		// 상품 리스트 풀력
+		// 상품 리스트 출력
 		public List<BookDTO> bookGetList(int start, int end){
 			List<BookDTO> list = new ArrayList<BookDTO>();
 			Connection con = null;
@@ -190,6 +190,7 @@ public class BookDAO {
 					book.setBook_content(rs.getString("book_content"));
 					book.setBook_img(rs.getString("book_img"));
 					book.setBook_reg(rs.getTimestamp("book_reg"));
+					book.setBook_stock(rs.getInt("book_stock"));
 					
 					list.add(book);
 				}

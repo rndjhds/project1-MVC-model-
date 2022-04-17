@@ -62,7 +62,7 @@ public class CartBuy implements Action{
 		   // 장바구니 삭제 아래에 구현
 		      
 		      int cart_no1 = Integer.parseInt(cart_no);
-	          int result3 = dao.cartDel(cart_no1);
+	          dao.cartDel(cart_no1);
 			
 		}
 		

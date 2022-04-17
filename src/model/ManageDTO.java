@@ -6,7 +6,7 @@ public class ManageDTO {
 	private String member_id;
 	private String member_grade;
 	private int member_mile;
-	private String admin_id;
+	
 	
 	public int getManage_num() {
 		return manage_num;
@@ -32,11 +32,5 @@ public class ManageDTO {
 	public void setMember_mile(int member_mile) {
 		this.member_mile = member_mile;
 	}
-	public String getAdmin_id() {
-		return admin_id;
-	}
-	public void setAdmin_id(String admin_id) {
-		this.admin_id = admin_id;
-	}
-	
+		
 }

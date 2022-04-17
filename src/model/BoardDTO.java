@@ -13,6 +13,7 @@ public class BoardDTO {
 	private int board_ref;
 	private int board_lev;
 	private int board_seq;
+	private int board_pw;
 	
 	public int getBoard_num() {
 		return board_num;
@@ -73,6 +74,12 @@ public class BoardDTO {
 	}
 	public void setBoard_seq(int board_seq) {
 		this.board_seq = board_seq;
+	}
+	public int getBoard_pw() {
+		return board_pw;
+	}
+	public void setBoard_pw(int board_pw) {
+		this.board_pw = board_pw;
 	}
 	
 }

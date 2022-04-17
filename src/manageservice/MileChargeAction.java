@@ -46,7 +46,7 @@ public class MileChargeAction implements Action{
 			
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./index.jsp");
+			forward.setPath("/ManageAction.managedo");
 			
 			return forward;
 		

@@ -52,7 +52,7 @@ public class Update implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./index.jsp");
+		forward.setPath("/BookMain.pdo");
 		return forward;
 	}
 

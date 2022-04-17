@@ -113,7 +113,7 @@ public class ManageDAO {
 //	
 				
 				
-				// 판매내역 데이터 갯수 구하기
+				// 주문내역 데이터 갯수 구하기
 				public int getCount() {
 					int result = 0;
 					Connection con = null;
@@ -123,7 +123,7 @@ public class ManageDAO {
 					try {
 						con = getConnection();
 						
-						String sql ="select count(*) from manage";
+						String sql ="select count(*) from member";
 						
 						pstmt = con.prepareStatement(sql);
 						rs = pstmt.executeQuery();		// SQL문 실행
