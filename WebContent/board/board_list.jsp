@@ -33,7 +33,7 @@ th {
 </style>
 
 <table width=900 align=center>
-	<caption><h2>문의 게시판</h2></caption>
+	<caption><h3>문의 게시판</h3></caption>
 	<tr>
 		<th>번호</th>
 		<th>제목</th>

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>모삼?책삼!</title>
 <link href="<%=request.getContextPath()%>/css/admin_view.css"
 	rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,23 +16,27 @@
 </head>
 <body>
 <table align="center" class="tb">
-	<caption>도서 목록</caption>
+	<caption><h3>도서 관리</h3></caption>
 	<tr>
-		<th>출력번호</th>
-		<th>도서 번호</th>
-		<th>저자</th>
-		<th>도서명</th>
-		<th>재고량</th>
-		<th>판매량</th>
-		<th>가격</th>
-		<th>출판사</th>
+		<th>번호</th>
 		<th>카테고리</th>
+		<c:if test="${sessionScope.id=='admin'}">
+			<th>도서코드</th>
+		</c:if>
+		<th>도서명</th>
+		<th>저자</th>
+		<th>출판사</th>
+		<th>가격</th>
+		<c:if test="${sessionScope.id=='admin'}">
+			<th>재고</th>
+			<th>판매</th>
+		</c:if>
 		<th>등록일</th>
 		<c:if test="${sessionScope.id=='admin'}">
-		<th>상품삭제</th>
+		<th></th>
 		</c:if>
 		<c:if test="${sessionScope.id != 'admin' && sessionScope.id != null}">
-		<th>상품담기</th></c:if>
+		<th></th></c:if>
 	</tr>
 	 <c:set var="num" value="${bookcount - (page-1) * 10 }" />
      <c:forEach var="b" items="${booklist}">
@@ -41,23 +45,22 @@
             <td class="tb1">${num}
                <c:set var="num" value="${num-1}" />
             </td>
+            <td class="tb1">${b.book_category}</td>
             <c:if test="${sessionScope.id == 'admin'}">
             <td class="tb1"><a href="<%=request.getContextPath() %>/BookModify.pdo?book_num=${b.book_num}&page=${page}">${b.book_num}</a></td>
             </c:if>
-            <c:if test="${sessionScope.id != 'admin' }">
-            <td class="tb1">${b.book_num}</td>
-            </c:if>
-            <td class="tb1">${b.book_author}</td>
             <td class="tb1">${b.book_name}</td>
+            <td class="tb1">${b.book_author}</td>
+            <td class="tb1">${b.book_pb}</td>
+            <td class="tb1">${b.book_price}</td>            
+            <c:if test="${sessionScope.id=='admin'}">
             <td class="tb1">${b.book_stock}</td> 
             <td class="tb1">${b.book_count}</td> 
-            <td class="tb1">${b.book_price}</td>            
-            <td class="tb1">${b.book_pb}</td>
-            <td class="tb1">${b.book_category}</td>
+            </c:if>
             <td class="tb1"><fmt:formatDate value="${b.book_reg}"
-                  pattern="yyyy-MM-dd HH:mm:ss EEE요일" /></td>
+                  pattern="yyyy-MM-dd" /></td>
             <c:if test="${sessionScope.id=='admin'}">
-            <td class="tb1"><input type="button" value="상품삭제" class="submit-btn" 
+            <td class="tb1"><input type="button" value="삭제" class="submit-btn" 
             	onClick="location.href='<%=request.getContextPath()%>/BookDelete.pdo?book_num=${b.book_num}&page=${page}'">
             </td></c:if>
             <c:if test="${sessionScope.id != 'admin' && sessionScope.id != null}">
@@ -101,6 +104,9 @@
 <!-- 마지막 페이지로 이동 -->
 	<a href="./BookListAction.pdo?page=${pageCount}" style="text-decoration: none"> >> </a>
 
+<c:if test="${sessionScope.id == 'admin' }">
+<input type="button" value="등록하기" onClick="location.href='./BookAdd.pdo'">
+</c:if>
 
 </c:if>
 </center>

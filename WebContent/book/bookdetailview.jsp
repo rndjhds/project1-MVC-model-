@@ -14,15 +14,10 @@
 <form action="./OrderAction.odo" method="post">
 <input type="hidden" name="book_num" value="${book.book_num}">
 <input type="hidden" name="member_id" value="${member_id}">
-<table align="center" border=1>
-	<tr>
-		<th>도서 상세정보</th>
-	</tr>
-	<tr>
-		<th>
-			<img src="<%=request.getContextPath()%>/bookupload/${book.book_img}" width=100%>
-		</th>
-	<tr>
+
+<h3 class="tb1">도서 상세정보</h3>
+<div class="tb1"><img src="<%=request.getContextPath()%>/bookupload/${book.book_img}" width=50%></div>
+<table align="center" class="tb">
 		<th>도서 제목</th>
 		<td colspan=2>${book.book_name}</td>
 	</tr>
@@ -41,19 +36,19 @@
 	</tr>
 	<tr>
 		<th>도서 내용</th>
-		<td colspan=2>${book.book_content}</td>
+		<td colspan=2 class="con">${book.book_content}</td>
 	</tr>
 	<tr>
 		<td colspan=3 align="center">
 		
 		<c:if test="${sessionScope.id == null}">
-		     <input type=button value="구매하기" onclick="location.href='./LoginForm.mdo'">
-			 <input type=button value="담기" onclick="location.href='./LoginForm.mdo'">
-			 <input type=button value="뒤로가기" onClick="location.href='./BookMain.pdo?page=${page}'"></c:if>
+		     <input type=button value="구매하기" onclick="location.href='./LoginForm.mdo'" class="submit-btn">
+			 <input type=button value="담기" onclick="location.href='./LoginForm.mdo'" class="submit-btn">
+			 <input type=button value="뒤로가기" onClick="location.href='./BookMain.pdo?page=${page}'" class="submit-btn"></c:if>
 		<c:if test="${sessionScope.id != null}">
-			 <input type=submit value="구매하기">
-			 <input type=button value="담기" onclick="location.href='./CartAdd.cdo?book_name=${book.book_name}&book_num=${book.book_num}&book_price=${book.book_price}'">
-			 <input type=button value="뒤로가기" onClick="location.href='./BookMain.pdo?page=${page}'"></c:if>
+			 <input type=submit value="구매하기" class="submit-btn">
+			 <input type=button value="담기" onclick="location.href='./CartAdd.cdo?book_name=${book.book_name}&book_num=${book.book_num}&book_price=${book.book_price}'" class="submit-btn">
+			 <input type=button value="뒤로가기" onClick="location.href='./BookMain.pdo?page=${page}'" class="submit-btn"></c:if>
 		</td>
 	</tr>
 </table>

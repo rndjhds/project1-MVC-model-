@@ -15,9 +15,10 @@
 </head>
 <body>
 
-<form method=post action="<%=request.getContextPath()%>/MileAddAction.mdo">
+<form method=post action="<%=request.getContextPath()%>/MileAddAction.mdo"
+ onsubmit="alert('마일리지가 충전되었습니다.')">
 	<table width=500 align="center" class="tb">
-	<caption>마일리지 충전<br><br></caption>
+	<caption><h3>마일리지 충전</h3></caption>
 		<tr>
 			<td>
 				<input type="radio" name="mile" id="mile_5000" value="5000">5,000

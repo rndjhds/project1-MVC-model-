@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <link href="<%=request.getContextPath() %>/css/admin_view.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="<%=request.getContextPath() %>/book/book.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/share/header.jsp" %>  
 </head>

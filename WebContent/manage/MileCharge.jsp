@@ -23,7 +23,7 @@
 	<table width=500 align="center" border=1>
 	<caption>마일리지 충전<br><br></caption>
 		<tr>
-		<th colspan=3>${param.member_id}님</th>		
+		<th colspan=3>${param.member_id}님 보유마일리지: ${param.member_mile}</th>		
 		</tr>		
 		<tr>
 			<th>마일리지 직접입력</th>

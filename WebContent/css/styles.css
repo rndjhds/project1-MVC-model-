@@ -42,7 +42,6 @@
 /* products */
 
 .products {
-  clear:both;
   width:1000px;
   margin-left: auto;
   margin-right: auto;
@@ -78,48 +77,10 @@ span {
 }
 /* products end */
 
-/* bookdetail */
-.bookdetail {
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
 
-.bookdetail p {
-	text-align: center;
-}
-
-.bookdetail img {
-	display: inline-block;
-	width: 50%;
-	border: 1px solid black;
-}
-
-.bookdetail strong {
-	display: block;
-}
-
-.bookdetail table th{
-	border: 1px solid black;
-}
-
-.bookdetail table td{
-	border: 1px solid black;
-}
-
-.con {
-	border: 1px solid black;
-	height: 100px;
+.con{
 	overflow: auto;
 }
-
-.btn {
-	margin-top: 30px;
-	text-align: center;
-}
-/* bookdetail end */
-
 
 .submit-btn:hover {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
@@ -137,12 +98,9 @@ span {
 .mem {
 	width: 900px;
 	margin: 0px auto;
-	border-radius: 5px;
 }
 
-.mem input {
-	border-radius: 3px;
-}
+
 
 .click:hover{
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);

@@ -15,14 +15,14 @@
 </head>
 <body>
 
-<table width=800 align=center class="tb">
-		<caption>회원 관리<br><br></caption>
+<table width=600 align=center class="tb">
+		<caption><h3>회원 관리</h3></caption>
 		<tr>
-			<th>회원관리 번호</th>
+			<th>관리번호</th>
 			<th>회원아이디</th>
 			<th>회원등급</th>
 			<th>마일리지</th>			
-			<th>기타</th>			
+			<th></th>			
 		</tr>
 
 		<c:set var="num" value="${listcount - (page-1) * 10 }" />

@@ -16,8 +16,9 @@
 </head>
 <body>
 
-	<form method="post" action="<%=request.getContextPath()%>/Delete.mdo">
-		<input type="hidden" name="member_id" value="${sessionScope.member_id}">
+	<form method="post" action="<%=request.getContextPath()%>/Delete.mdo"
+	 onsubmit="return confirm('탈퇴하시겠습니까?')">
+		<input type="hidden" name="member_id" value="${sessionScope.id}">
 		<table width=300 align=center class="tb">
 			<tr>
 				<th colspan=2>회원 탈퇴</th>

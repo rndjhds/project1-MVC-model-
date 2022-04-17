@@ -16,18 +16,18 @@
 <body>
 
 <table width=1300 align=center class="tb">
-		<caption>판매 내역</caption>
+		<caption><h3>판매 내역</h3></caption>
 		<tr>
 			<th>주문번호</th>
+			<th>도서코드</th>
 			<th>회원아이디</th>
-			<th>회원이름</th>
-			<th>도서번호</th>
+			<th>회원명</th>
 			<th>도서명</th>
+			<th>가격</th>
 			<th>주문수량</th>
-			<th>책가격</th>
+			<th>주문일</th>
 			<th>주문상태</th>
-			<th>날짜</th>
-			<th>주문상태 변경</th>
+			<th></th>
 			
 		</tr>
 
@@ -40,18 +40,18 @@
 					<c:set var="num" value="${num-1}" />
 				</th> --%>
 				<td class="tb1">${b.order_num}</td>
+				<td class="tb1">${b.book_num}</td> 
 				<td class="tb1">${b.member_id}</td>
 				<td class="tb1">${b.member_name}</td>
-				<td class="tb1">${b.book_num}</td> 
 				<td class="tb1">${b.book_name}</td>				
-				<td class="tb1">${b.order_qty}</td>
 				<td class="tb1">${b.book_price}</td>
-				<td class="tb1">${b.order_status}</td>
+				<td class="tb1">${b.order_qty}</td>
 				<td class="tb1"><fmt:formatDate value="${b.order_date}"
-						pattern="yyyy-MM-dd HH:mm:ss EEE요일" /></td>
-				<td class="tb1"><c:if test="${b.order_status=='배송대기'}"><input type=button value="배송시작"
+						pattern="yyyy-MM-dd HH:mm:ss" /></td>
+				<td class="tb1">${b.order_status}</td>
+				<td class="tb1"><c:if test="${b.order_status=='배송대기'}"><input type=button value="배송"
 			 onclick="location.href='./Delivery.odo?order_num=${b.order_num}'">
-			 		<input type=button value="주문취소"
+			 		<input type=button value="취소"
 			 onclick="location.href='./OrderCancel.odo?member_id=${b.member_id}&order_num=${b.order_num}&book_price=${b.book_price}'">
 			 </c:if></td>	
 				

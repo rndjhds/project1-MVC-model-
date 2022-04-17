@@ -30,7 +30,7 @@
 
 <form method="post" action="<%=request.getContextPath()%>/MemberInsert.mdo">
 
-	<h4 id="title">회원 가입폼</h4>
+	<h3 id="title">회원 가입</h3>
 	<div class="mem">
 		<table align="center" class="tb">
 			<tr>

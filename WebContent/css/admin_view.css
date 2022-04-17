@@ -26,18 +26,25 @@ body {
   text-align: center;
 }
 
+.info a {
+	color: black;
+}
+
 
 #Login-status {
   float: right;
   padding: 0px;
-  margin: 0px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
 }
 
 #Login-status li {
   float: right;
   list-style: none;
-  margin-left: 30px;
-  line-height: 60px;
+  margin-left: 20px;
+  line-height: 30px;
 }
 
 li a {
@@ -50,10 +57,29 @@ li a:hover {
 	font-weight: bold;
 }
 
+#Login-status1 {
+  float: right;
+  padding: 0px;
+  margin-bottom: 13px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+#Login-status1 li {
+  float: right;
+  list-style: none;
+  margin-left: 20px;
+  line-height: 30px;
+}
+
+.mar0 {
+	margin-top: 0px;
+}
 /* header end */
 
 .navbar {
-	margin: 100px;
+	margin:100px;
 	clear:both;
 	text-align: center;
 }

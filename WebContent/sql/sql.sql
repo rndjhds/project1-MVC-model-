@@ -14,6 +14,8 @@ select * from bookadmin;
 
 update member set member_mile='27500' where member_id='1';
 
+delete from book where book_num=5100;
+
 
 create table cart(
 cart_no number primary key,
@@ -27,4 +29,4 @@ start with 1
 increment by 1
 nocache;
 
-drop table cart;
+drop table sale;

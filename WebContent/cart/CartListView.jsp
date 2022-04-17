@@ -15,7 +15,7 @@
 <body>
 <form method=post action="<%=request.getContextPath() %>/CartBuy.cdo">
 	<table width=700 align="center" class="tb">
-		<caption>장바구니 리스트<br><br></caption>
+		<caption><h3>장바구니</h3></caption>
 		<tr>
 			<th>카트번호</th>
 			<th>도서번호</th>
@@ -31,7 +31,7 @@
 			<td>${c.cbook_name}</td>
 			<td>${c.cbook_price}</td>
 			<td><input type=button value="삭제"
-			 onclick="location.href='./CartDel.cdo?cart_no=${c.cart_no}'"></td>
+			 onclick="if(confirm('삭제하시겠습니까?'))location.href='./CartDel.cdo?cart_no=${c.cart_no}'"></td>
 		</tr>
 		</c:forEach>
 		<tr align="center">

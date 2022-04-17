@@ -95,6 +95,7 @@
 	<tr><td colspan=2 align=center>
 		<input type=submit value="수정" class="submit-btn">
 		<input type="button" value="취소" onClick="history.go(-1)" class="submit-btn">
+		<input type="button" value="회원 탈퇴" onClick="location.href='./DeleteMember.mdo'">
 		</td>
 	</tr>	
 </table>
